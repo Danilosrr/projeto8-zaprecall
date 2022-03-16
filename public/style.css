@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Recursive', sans-serif ;
+}
+
+.login{
+    background: #FB6B6B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    padding: 40% 20%;
+}
+
+.login .logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    height: 250px;    
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.login .logo button{
+    background: #FFFFFF;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 5px 25px;    
+}
+.logoImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoImg img{
+    width: 55px;
+    height: 65px;
+}
+
+.logoImg h1{
+    letter-spacing: -0.012em;
+    color: #FFFFFF;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 31px;
+}
+
+.esconder{
+    display: none;
+}
