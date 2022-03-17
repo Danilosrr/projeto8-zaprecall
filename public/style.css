@@ -3,7 +3,7 @@
     font-family: 'Recursive', sans-serif ;
 }
 
-.login{
+.pagina{
     background: #FB6B6B;
     display: flex;
     justify-content: center;
@@ -12,10 +12,9 @@
     position: absolute;
     top:0;
     bottom: 0;
-    padding: 40% 20%;
 }
 
-.login .logo{
+.pagina .Inicio{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,7 +27,7 @@
     font-size: 12px;
 }
 
-.login .logo button{
+.pagina .Inicio button{
     background: #FFFFFF;
     border: 1px solid #D70900;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -42,12 +41,12 @@
     align-items: center;
 }
 
-.logoImg img{
+.Inicio img{
     width: 55px;
     height: 65px;
 }
 
-.logoImg h1{
+.Inicio h1 {
     letter-spacing: -0.012em;
     color: #FFFFFF;
     font-size: 25px;
@@ -57,4 +56,59 @@
 
 .esconder{
     display: none;
+}
+
+.Perguntas{
+    position: fixed;
+    top: 0;
+    bottom:0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoPequeno{
+    margin: 30px;
+    background-color: #FB6B6B;
+    display: flex;
+}
+.logoPequeno img{
+    margin: 5px;
+    Width: 26px;
+    Height: 30px;    
+}
+.logoPequeno h1{
+    margin: 5px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 31px;
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.Lista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.Pergunta{
+    width: 182px;
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin:10px;
+    padding: 10px;
+}
+.Contador{
+    background-color: #FFFFFF;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
 }
