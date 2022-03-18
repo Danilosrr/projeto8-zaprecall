@@ -70,8 +70,7 @@
 }
 
 .logoPequeno{
-    margin: 30px;
-    background-color: #FB6B6B;
+    margin: 10px;
     display: flex;
 }
 .logoPequeno img{
@@ -90,11 +89,13 @@
     font-style: normal;
 }
 .Lista{
+    padding-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    overflow-y: scroll;
 }
 .Pergunta{
     width: 182px;
@@ -106,9 +107,23 @@
     margin:10px;
     padding: 10px;
 }
+.Pergunta img{
+    Width: 20px;
+    Height: 13px;
+}
 .Contador{
     background-color: #FFFFFF;
     padding: 15px;
     width: 100%;
     text-align: center;
+}
+
+.Selecionada{
+    background-color: #FFFFD4;
+}
+.Selecionada h1{
+    margin-bottom: 30px;
+}
+.Selecionada img{
+    align-self: flex-end;
 }
