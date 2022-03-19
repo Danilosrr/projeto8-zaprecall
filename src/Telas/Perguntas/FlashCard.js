@@ -18,8 +18,18 @@ export default function FlashCard(props){
 
     const [TelaPergunta,setTelaPergunta] = React.useState(0)
     const [Cor,setCor] = React.useState('')
-    function clickBotao(){
+    function clickBotao(botao){
         props.funcao(props.cont+1)
+
+        if(botao==='vermelho'){
+            props.funcao2(<><>{props.contImg}</><ion-icon style={{color: '#FF3030'}}  name="close-circle-outline"></ion-icon></>);
+            props.funcaoErro(props.erro+1)  
+        }else if(botao==='verde'){
+            props.funcao2(<><>{props.contImg}</><ion-icon style={{color: '#2FBE34'}}  name="checkmark-circle-outline"></ion-icon></>)
+        }else{
+            props.funcao2(<><>{props.contImg}</><ion-icon style={{color: '#FF922E'}} name="help-circle-outline"></ion-icon></>)
+        }
+        
         setTelaPergunta(3)
     }
 
@@ -43,9 +53,9 @@ export default function FlashCard(props){
                 <div className="Pergunta Responder">
                     <h1>{props.resposta}</h1>
                     <div className="botoes">
-                        <button style={{background:'#FF3030'}} className="botao" onClick={()=>{clickBotao(); setCor('vermelho')}}>Não lembrei</button>
-                        <button style={{background:'#FF922E'}} className="botao" onClick={()=>{clickBotao(); setCor('amarelo')}}>Quase não lembrei</button>
-                        <button style={{background:'#2FBE34'}} className="botao" onClick={()=>{clickBotao(); setCor('verde')}}>Zap!</button>
+                        <button style={{background:'#FF3030'}} className="botao" onClick={()=>{clickBotao('vermelho'); setCor('vermelho')}}>Não lembrei</button>
+                        <button style={{background:'#FF922E'}} className="botao" onClick={()=>{clickBotao('amarelo'); setCor('amarelo')}}>Quase não lembrei</button>
+                        <button style={{background:'#2FBE34'}} className="botao" onClick={()=>{clickBotao('verde'); setCor('verde')}}>Zap!</button>
                     </div>
                 </div>    
             )
