@@ -17,9 +17,10 @@ export {flashcardsEmbaralhados}
 export default function FlashCard(props){
 
     const [TelaPergunta,setTelaPergunta] = React.useState(0)
-
-    function virarFlashCard(){
-        setTelaPergunta(1)
+    const [Cor,setCor] = React.useState('')
+    function clickBotao(){
+        props.funcao(props.cont+1)
+        setTelaPergunta(3)
     }
 
     switch(TelaPergunta){
@@ -27,15 +28,35 @@ export default function FlashCard(props){
             return(
                 <div className="Pergunta">
                     <h1>Pergunta {props.indice}</h1>
-                    <ion-icon onClick={virarFlashCard} name="play-outline"></ion-icon>
+                    <ion-icon onClick={()=>(setTelaPergunta(1))} name="play-outline"></ion-icon>
                 </div>
             ) 
         case 1:
             return(
                 <div className="Pergunta Selecionada">
                     <h1>{props.pergunta}</h1>
-                    <img src="assets/imgs/setinha.png" alt="ver resposta"/>
+                    <img onClick={()=>(setTelaPergunta(2))} src="assets/imgs/setinha.png" alt="ver resposta"/>
                 </div>
-            )          
+            )
+        case 2:
+            return(
+                <div className="Pergunta Responder">
+                    <h1>{props.resposta}</h1>
+                    <div className="botoes">
+                        <button style={{background:'#FF3030'}} className="botao" onClick={()=>{clickBotao(); setCor('vermelho')}}>Não lembrei</button>
+                        <button style={{background:'#FF922E'}} className="botao" onClick={()=>{clickBotao(); setCor('amarelo')}}>Quase não lembrei</button>
+                        <button style={{background:'#2FBE34'}} className="botao" onClick={()=>{clickBotao(); setCor('verde')}}>Zap!</button>
+                    </div>
+                </div>    
+            )
+        case 3:
+            return(
+                <div className={"Pergunta Respondida "+Cor}>
+                    <h1>Pergunta {props.indice}</h1>
+                    {Cor==="vermelho"?<ion-icon name="close-circle-outline"></ion-icon>:null}
+                    {Cor==="verde"?<ion-icon name="checkmark-circle-outline"></ion-icon>:null}
+                    {Cor==="amarelo"?<ion-icon name="help-circle-outline"></ion-icon>:null}
+                </div>
+            )                  
     }         
 }
